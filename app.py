@@ -168,7 +168,7 @@ def donation():
             cursor.execute('SELECT * from donate where mail_id= % s and donation_id= % s and donation_date = % s',(session['mail_id'],donation_id,donation_date))
             donation=cursor.fetchone()
             if donation:
-                msg='Hey you already signedup for donation'
+                msg='Hey  you already signedup for donation'
             else:
                 cursor.execute('INSERT into donate values(%s,%s,%s)',(session['mail_id'],donation_id,donation_date))
                 conn.commit()
